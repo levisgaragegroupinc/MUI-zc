@@ -1,97 +1,5 @@
 :root {
-/* 
-hex transparency values
-08% 14
-16% 29
-32% 52
-54% 8A
-85% D9
-100% FF
- */
-
-/* colors */
---primary: #276d9b;
---primaryOn: #FFF;
---primaryBorder: #1A4867;
---primaryBorderVar1: #00000029;
-
---secondary: #F4F4F4;
---onSecondary: #303030;
---secondaryBorder: #CCC;
-
 --background: #EFEFEF;
---onBackground: #303030;
-
---surface: #FFF;
---onSurface: #303030;
-
---textPrimary: #303030;
-
---error: #F22002;
---onError: #FFF;
-
---success: #1AB318;
---onSuccess: #FFF;
-
---danger: #A11501;
---onDanger: #FFF;
-
---warning: #F9A31A;
---onWarning: #FFF;
-
---info: #2A2A2A;
---onInfo: #FFF;
-
-/* primary button */
---primaryBtnContained-enabled: #276C9B;
---primaryBtnContained-hover: #276D9B;
---primaryBtnContained-focused: #205A81;
---primaryBtnContained-pressed: #1A4867;
---primaryBtnContained-disabled: #6F9DBC;
---primaryBtnContained-text: #FFF;
---primaryBtnContained-text-disabled: #FFF;
-
---primaryBtnText-enabled: #276D9B00;
---primaryBtnText-hover: #205A8114;
---primaryBtnText-focused: #276D9B14;
---primaryBtnText-pressed: #276D9B29;
---primaryBtnText-disabled: #276D9B00;
---primaryBtnText-text: #276C9B;
-
---primaryBtnOutline-enabled: #276D9B00;
---primaryBtnOutline-hover: #205A8114;
---primaryBtnOutline-focused: #276D9B14;
---primaryBtnOutline-pressed: #276D9B29;
---primaryBtnOutline-disabled: #276D9B00;
---primaryBtnOutline-border: #00000029;
---primaryBtntext-text: #276C9B;
---primaryBtnText-text-disabled: #276C9B52; 
-
-/* secondary button */
---secondaryBtnContained-enabled: #F4F4F4;
---secondaryBtnContained-hover: #EFEFEF;
---secondaryBtnContained-focused: #EFEFEF;
---secondaryBtnContained-pressed: #D3D5D8;
---secondaryBtnContained-disabled: #F4F4F4;
---secondaryBtnContained-text: #303030;
---secondaryBtnContained-text-disabled: #3030308A;
-
---secondaryBtnText-enabled: #F4F4F4;
---secondaryBtnText-hover: #EFEFEF;
---secondaryBtnText-focused: #EFEFEF;
---secondaryBtnText-pressed: #D3D5D8;
---secondaryBtnText-disabled: #F4F4F4;
---secondaryBtnText-text: #303030;
---secondaryBtnText-text-disabled: #3030308A;
-
---secondaryBtnOutline-enabled: #F4F4F4;
---secondaryBtnOutline-hover: #EFEFEF;
---secondaryBtnOutline-focused: #EFEFEF;
---secondaryBtnOutline-pressed: #D3D5D8;
---secondaryBtnOutline-disabled: #F4F4F4;
---secondaryBtnOutline-border: #CCCCCC;
---secondaryBtntext-text: #303030;
---secondaryBtnText-text-disabled: #3030308A; 
 
 /* padding */
 --s-pad: 3px;
@@ -117,6 +25,7 @@ hex transparency values
 }
 
 .Main {
+  padding: 20px;
   width: 100%;
 }
 

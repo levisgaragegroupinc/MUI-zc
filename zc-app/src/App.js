@@ -5,9 +5,28 @@ import {
   Button,
   Divider,
   Typography,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  FormControl,
+  FormLabel,
+  Checkbox,
+  CssBaseline,
+  InputLabel,
+  MenuItem,
+  Select,
 } from "@mui/material";
 
 const theme = createTheme({
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#CA1B02",
+        },
+      },
+    },
+  },
   palette: {
     mode: "light",
     common: {
@@ -15,63 +34,63 @@ const theme = createTheme({
       white: "#FFF",
     },
     primary: {
-      main: "#276D9B",
-      light: "#276D9B",
-      dark: "#1A4867",
-      contrastText: "#FFF",
+      main: "#276C9B",
+      light: "#6F9DBC",
+      dark: "#236192",
+      // contrastText: "#FFF",
     },
     secondary: {
-      main: "#F4F4F4",
-      light: "#EFEFEF",
-      dark: "#D3D5D8",
-      contrastText: "#303030",
+      main: "#7E5475",
+      light: "#A98DA3",
+      dark: "#694662",
+      // contrastText: "#333333",
     },
     error: {
       main: "#F22002",
-      light: "#F2F52C",
+      light: "#F66A56",
       dark: "#CA1B02",
-      contrastText: "#FFF",
+      // contrastText: "#FFF",
     },
     warning: {
-      main: "#F9A31A",
-      light: "#FAB240",
-      dark: "#CF8816",
-      contrastText: "#FFF",
+      main: "#F48024",
+      light: "#F8AA6D",
+      dark: "#CB6B1E",
+      // contrastText: "#FFF",
     },
     info: {
-      main: "#2A2A2A",
-      light: "#2A2A2A",
-      dark: "#2A2A2A",
-      contrastText: "#FFF",
+      main: "#0D2434",
+      light: "#1A4867",
+      dark: "#08161F",
+      // contrastText: "#FFF",
     },
     success: {
       main: "#1AB318",
-      light: "#40C03E",
+      light: "#66CC65",
       dark: "#169514",
       contrastText: "#FFF",
     },
-    text: {
-      primary: "#303030",
-      secondary: "#303030",
-      disabled: "#3030308A",
-    },
-    background: {
-      paper: "#FFF",
-      default: "#FFF",
-    },
-    action: {
-      active: "rgba(0,0,0,0.54)",
-      hover: "rgba(0,0,0,0.04)",
-      hoverOpacity: 0.04,
-      selected: "rgba(0,0,0,0.8)",
-      selectedOpacity: 0.08,
-      disabled: "rgba(0,0,0,0.26)",
-      disabledBackground: "rgba(0,0,0,0.12)",
-      disabledOpacity: 0.38,
-      focus: "rgba(0,0,0,0.12)",
-      focusOpacity: 0.12,
-      activatedOpacity: 0.12,
-    },
+    // text: {
+    //   primary: "#303030",
+    //   secondary: "#303030",
+    //   disabled: "#3030308A",
+    // },
+    // background: {
+    //   paper: "#efefef",
+    //   default: "#efefef",
+    // },
+    // action: {
+    //   active: "rgba(0,0,0,0.54)",
+    //   hover: "rgba(0,0,0,0.04)",
+    //   hoverOpacity: 0.04,
+    //   selected: "rgba(0,0,0,0.8)",
+    //   selectedOpacity: 0.08,
+    //   disabled: "rgba(0,0,0,0.26)",
+    //   disabledBackground: "rgba(0,0,0,0.12)",
+    //   disabledOpacity: 0.38,
+    //   focus: "rgba(0,0,0,0.12)",
+    //   focusOpacity: 0.12,
+    //   activatedOpacity: 0.12,
+    // },
   },
   shape: {
     borderRadius: 4,
@@ -182,37 +201,178 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      {" "}
+      <CssBaseline />
       <div className="App">
         <main className="Main">
           <h1>Hello there this is the page</h1>
+
           <Divider textAlign="left" className="zc-padding-top-bottom">
-            Primary Buttons Enabled
+            <h3>Primary Enabled</h3>
           </Divider>
-          <Button>Primary Text</Button>
-          <Button variant="contained">Primary Contained</Button>
-          <Button variant="outlined">Primary Outlined</Button>
+          <div className="myflexbox">
+            <Button variant="text">Primary Text</Button>
+            <Button variant="contained">Primary Contained</Button>
+            <Button variant="outlined">Primary Outlined</Button>
+          </div>
+
           <Divider textAlign="left" className="zc-padding-top-bottom">
-            Primary Button Disabled
+            <h3>Primary Disabled</h3>
           </Divider>
-          <Button disabled="true">Primary Text Disabled</Button>
-          <Button variant="contained" disabled="true">
-            Primary Contained Disabled
-          </Button>
-          <Button variant="outlined" disabled="true">
-            Primary Outlined Disabled
-          </Button>
+          <div className="myflexbox">
+            <Button variant="text" disabled="true">
+              Text Disabled
+            </Button>
+            <Button variant="contained" disabled="true">
+              Contained Disabled
+            </Button>
+            <Button variant="outlined" disabled="true">
+              Outlined Disabled
+            </Button>
+          </div>
+
           <Divider textAlign="left" className="zc-padding-top-bottom">
-            Secondary Buttons Enabled
+            <h3>Secondary Enabled</h3>
           </Divider>
-          <Button color="secondary">Secondary Text</Button>
-          <Button color="secondary" variant="contained">
-            Secondary Contained
-          </Button>
-          <Button color="secondary" variant="outlined">
-            Secondary Outlined
-          </Button>
+          <div className="myflexbox">
+            <Button color="secondary" variant="text">
+              Text Secondary
+            </Button>
+            <Button color="secondary" variant="contained">
+              Contained Secondary
+            </Button>
+            <Button color="secondary" variant="outlined">
+              Outlined Secondary
+            </Button>
+          </div>
+
           <Divider textAlign="left" className="zc-padding-top-bottom">
-            Typography
+            <h3>Secondary Buttons Disabled</h3>
+          </Divider>
+          <div className="myflexbox">
+            <Button color="secondary" variant="text" disabled="true">
+              Secondary Text
+            </Button>
+            <Button color="secondary" varient="contained" disabled="true">
+              Secondary Contained
+            </Button>
+            <Button color="secondary" variant="outlined" disabled="true">
+              Secondary Outlined
+            </Button>
+          </div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Success</h3>
+          </Divider>
+          <div className="myflexbox">
+            <Button variant="text" color="success">
+              Success Text
+            </Button>
+            <Button variant="contained" color="success">
+              Success Contained
+            </Button>
+            <Button variant="outlined" color="success">
+              Success Oultined
+            </Button>
+          </div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Error</h3>
+          </Divider>
+          <div className="myflexbox">
+            <Button variant="text" color="error">
+              Error Text
+            </Button>
+            <Button variant="contained" color="error">
+              Error Contained
+            </Button>
+            <Button variant="outlined" color="error">
+              Error Outlined
+            </Button>
+          </div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Info</h3>
+          </Divider>
+          <div className="myflexbox">
+            <Button variant="text" color="info">
+              Info Text
+            </Button>
+            <Button variant="contained" color="info">
+              Info Contained
+            </Button>
+            <Button variant="outlined" color="info">
+              Info Outlined
+            </Button>
+          </div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Warning</h3>
+          </Divider>
+          <div className="myflexbox">
+            <Button variant="text" color="warning">
+              Warning Text
+            </Button>
+            <Button variant="contained" color="warning">
+              Warning Contained
+            </Button>
+            <Button variant="outlined" color="warning">
+              Warning Outlined
+            </Button>
+          </div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Radio Buttons</h3>
+          </Divider>
+
+          <div className="myflexbox">
+            <Radio />
+          </div>
+
+          <div className="myflexbox">
+            <FormControl>
+              <FormLabel id="demo-row-radio-buttons-group-label">
+                Radio Buttons Group
+              </FormLabel>
+              <RadioGroup
+                row
+                aria-labelledby="demo-row-radio-buttons-group-label"
+                name="row-radio-buttons-group"
+              >
+                <FormControlLabel
+                  value="RadioEnabled"
+                  control={<Radio />}
+                  label="Radio Enabled"
+                />
+                <FormControlLabel
+                  value="RadioDisabled"
+                  disabled
+                  control={<Radio />}
+                  label="Radio Disabled"
+                />
+              </RadioGroup>
+            </FormControl>
+          </div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Checkbox</h3>
+          </Divider>
+          <div className="myflexbox">
+            <Checkbox />
+          </div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Select</h3>
+          </Divider>
+          <div className="myflexbox"></div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Edit Me</h3>
+          </Divider>
+          <div className="myflexbox"></div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Typography</h3>
           </Divider>
           <Typography variant="body1">body1</Typography>
           <Typography variant="button">button</Typography>
