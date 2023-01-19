@@ -43,6 +43,11 @@ const theme = createTheme({
       dark: "#205A81",
       // contrastText: "#FFF",
     },
+    // secondary: {
+    //   main: "#F4F4F4",
+    //   light: "#9DA2A8",
+    //   dark: "#222F3A",
+    // },
     secondary: {
       main: "#6C747C",
       light: "#9DA2A8",
@@ -222,6 +227,9 @@ const theme = createTheme({
       textTransform: "uppercase",
     },
   },
+  components: {
+    MuiButton: { styleOverrides: { root: { textTransform: "capitalize" } } },
+  },
 });
 
 function App() {
@@ -277,13 +285,13 @@ function App() {
           </Divider>
           <div className="myflexbox">
             <Button color="secondary" variant="text" disabled="true">
-              Secondary Text
+              Text Secondary
             </Button>
-            <Button color="secondary" varient="contained" disabled="true">
-              Secondary Contained
+            <Button color="secondary" variant="contained" disabled="true">
+              Contained Secondary
             </Button>
             <Button color="secondary" variant="outlined" disabled="true">
-              Secondary Outlined
+              Outlined Secondary
             </Button>
           </div>
 
