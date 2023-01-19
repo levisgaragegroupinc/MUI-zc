@@ -15,18 +15,22 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  Box,
+  TextField,
+  Alert,
+  Stack,
 } from "@mui/material";
 
 const theme = createTheme({
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#CA1B02",
-        },
-      },
-    },
-  },
+  // components: {
+  //   MuiCssBaseline: {
+  //     styleOverrides: {
+  //       root: {
+  //         backgroundColor: "#CA1B02",
+  //       },
+  //     },
+  //   },
+  // },
   palette: {
     mode: "light",
     common: {
@@ -36,14 +40,13 @@ const theme = createTheme({
     primary: {
       main: "#276C9B",
       light: "#6F9DBC",
-      dark: "#236192",
+      dark: "#205A81",
       // contrastText: "#FFF",
     },
     secondary: {
-      main: "#7E5475",
-      light: "#A98DA3",
-      dark: "#694662",
-      // contrastText: "#333333",
+      main: "#6C747C",
+      light: "#9DA2A8",
+      dark: "#222F3A",
     },
     error: {
       main: "#F22002",
@@ -52,21 +55,45 @@ const theme = createTheme({
       // contrastText: "#FFF",
     },
     warning: {
-      main: "#F48024",
-      light: "#F8AA6D",
-      dark: "#CB6B1E",
+      main: "#F9A31A",
+      light: "#FBC266",
+      dark: "#CF8816",
       // contrastText: "#FFF",
     },
+    // info: {
+    //   main: "#0D2434",
+    //   light: "#1A4867",
+    //   dark: "#08161F",
+    //   // contrastText: "#FFF",
+    // },
+    // info: {
+    //   main: "#A1C5D4",
+    //   light: "#C1ECFE",
+    //   dark: "#819DA9",
+    //   // contrastText: "#FFF",
+    // },
+    // info: {
+    //   main: "#91DCFB",
+    //   light: "#B6E8FC",
+    //   dark: "#79B7D1",
+    //   // contrastText: "#FFF",
+    // },
     info: {
-      main: "#0D2434",
-      light: "#1A4867",
-      dark: "#08161F",
+      main: "#71D5FE",
+      light: "#A0E3FE",
+      dark: "#5EB1D4",
       // contrastText: "#FFF",
     },
+    // success: {
+    //   main: "#1AB318",
+    //   light: "#66CC65",
+    //   dark: "#169514",
+    //   contrastText: "#FFF",
+    // },
     success: {
-      main: "#1AB318",
-      light: "#66CC65",
-      dark: "#169514",
+      main: "#099531",
+      light: "#5BB876",
+      dark: "#077C29",
       contrastText: "#FFF",
     },
     // text: {
@@ -104,95 +131,94 @@ const theme = createTheme({
     fontWeightBold: 700,
     h1: {
       fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
-      fontWeight: 300,
-      fontSize: "6rem",
-      lineHeight: 1.167,
-      letterSpacing: "-0.01562em",
+      fontWeight: 600,
+      fontSize: "20px",
+      lineHeight: "24px",
+      letterSpacing: "0.0em", //-0.01562em
     },
     h2: {
       fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
-      fontWeight: 300,
-      fontSize: "3.75rem",
-      lineHeight: 1.2,
-      letterSpacing: "-0.00833em",
+      fontWeight: 200,
+      fontSize: "20px",
+      lineHeight: "24px",
+      letterSpacing: "0.0em",
     },
     h3: {
       fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
-      fontWeight: 400,
-      fontSize: "3rem",
-      lineHeight: 1.167,
+      fontWeight: 600,
+      fontSize: "16px",
+      lineHeight: "23px",
       letterSpacing: "0em",
     },
     h4: {
       fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
       fontWeight: 400,
-      fontSize: "2.125",
-      lineHeight: 1.235,
-      letterSpacing: "-0.00735em",
+      fontSize: "16px",
+      lineHeight: "23px",
+      letterSpacing: "0.0em",
     },
     h5: {
       fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
-      fontWeight: 400,
-      fontSize: "1.5rem",
-      lineHeight: 1.334,
-      letterSpacing: "0em",
+      fontWeight: 600,
+      fontSize: "14px",
+      lineHeight: "23px",
+      letterSpacing: "0.0em",
     },
     h6: {
       fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
-      fontWeight: 500,
-      fontSize: "1.25rem",
-      lineHeight: 1.6,
-      letterSpacing: "0.0075em",
+      fontWeight: 400,
+      fontSize: "14px",
+      lineHeight: "23px",
+      letterSpacing: "0.0em",
     },
     subtitle1: {
       fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
       fontWeight: 400,
       fontSize: "1rem",
-      lineHeight: 1.75,
-      letterSpacing: "0.00938em",
+      lineHeight: "23px",
+      letterSpacing: "0.0em",
     },
     subtitle2: {
       fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
       fontWeight: 500,
       fontSize: "0.875rem",
-      lineHeight: 1.57,
-      letterSpacing: "0.00714em",
+      lineHeight: "23px",
+      letterSpacing: "0.0em",
     },
     body1: {
       fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
-      fontWeight: 400,
-      fontSize: "1rem",
-      lineHeight: 1.5,
-      letterSpacing: "0.00938em",
+      fontWeight: 600,
+      fontSize: "12px",
+      lineHeight: "23px",
+      letterSpacing: "0.0em",
     },
     body2: {
       fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
       fontWeight: 400,
-      fontSize: "0.875rem",
-      lineHeight: 1.43,
-      letterSpacing: "0.01071em",
+      fontSize: "12px",
+      lineHeight: "23px",
+      letterSpacing: "0.0em",
     },
     button: {
       fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
-      fontWeight: 500,
-      fontSize: "0.875rem",
-      lineHeight: 1.75,
-      letterSpacing: "0.02857em",
-      textTransform: "uppercase",
+      fontWeight: 400,
+      fontSize: "14px",
+      lineHeight: "23px",
+      letterSpacing: "0.0em",
     },
     caption: {
       fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
       fontWeight: 400,
       fontSize: "0.75rem",
-      lineHeight: 1.66,
-      letterSpacing: "0.03333em",
+      lineHeight: "23px",
+      letterSpacing: "0.0em",
     },
     overline: {
       fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
       fontWeight: 400,
       fontSize: "0.75rem",
-      lineHeight: 1.66,
-      letterSpacing: "0.03333em",
+      lineHeight: "23px",
+      letterSpacing: "0.0em",
       textTransform: "uppercase",
     },
   },
@@ -364,26 +390,162 @@ function App() {
           <Divider textAlign="left" className="zc-padding-top-bottom">
             <h3>Select</h3>
           </Divider>
+          <div className="myflexbox">
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Age</InputLabel>
+              <Select></Select>
+            </FormControl>
+          </div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Text Field</h3>
+          </Divider>
+          <div className="myflexbox">
+            <TextField
+              id="outlined-basic"
+              label="Outlined"
+              variant="outlined"
+            />
+            <TextField id="filled-basic" label="Filled" variant="filled" />
+            <TextField
+              id="standard-basic"
+              label="Standard"
+              variant="standard"
+            />
+          </div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Text Field w/ label</h3>
+          </Divider>
+          <div className="myflexbox">
+            <TextField
+              id="filled-basic"
+              label="Select"
+              variant="filled"
+              helperText="Helper text here"
+              defaultValue="Default value here"
+            />
+          </div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Text Field Color Values</h3>
+          </Divider>
+          <div className="myflexbox">
+            <TextField
+              id="enter-text-filled"
+              label="Enter text"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="filled"
+            />
+            <TextField
+              id="enter-text-filled"
+              label="Enter text"
+              defaultValue="Correct"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="filled"
+              color="success"
+            />
+            <TextField
+              id="enter-text-filled"
+              label="Enter text"
+              defaultValue="Error"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="filled"
+              color="error"
+            />
+            <TextField
+              id="enter-text-filled"
+              label="Enter text"
+              defaultValue="Info"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="filled"
+              color="info"
+            />
+            <TextField
+              id="enter-text-filled"
+              label="Enter text"
+              defaultValue="Warning"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="filled"
+              color="warning"
+            />
+          </div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Text Field Widths</h3>
+          </Divider>
+          <div className="myflexbox">
+            <TextField
+              id="select-text-field"
+              select
+              label="320px"
+              defaultValue="Select a value"
+              variant="filled"
+              style={{ width: 320 }}
+            />
+            <TextField
+              id="select-text-field"
+              select
+              label="150px"
+              defaultValue="Select a value"
+              variant="filled"
+              style={{ width: 150 }}
+            />
+          </div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Edit Section</h3>
+          </Divider>
           <div className="myflexbox"></div>
 
           <Divider textAlign="left" className="zc-padding-top-bottom">
-            <h3>Edit Me</h3>
+            <h3>Alerts</h3>
           </Divider>
-          <div className="myflexbox"></div>
+          <div className="myflexbox">
+            <Alert severity="error">
+              This is an error alert — check it out!
+            </Alert>
+            <Alert severity="warning">
+              This is a warning alert — check it out!
+            </Alert>
+            <Alert severity="info">This is an info alert — check it out!</Alert>
+            <Alert severity="success">
+              This is a success alert — check it out!
+            </Alert>
+          </div>
 
           <Divider textAlign="left" className="zc-padding-top-bottom">
             <h3>Typography</h3>
           </Divider>
-          <Typography variant="body1">body1</Typography>
-          <Typography variant="button">button</Typography>
-          <Typography variant="caption">caption</Typography>
-          <Typography variant="h1">h1</Typography>
-          <Typography variant="h2">h2</Typography>
-          <Typography variant="h3">h3</Typography>
-          <Typography variant="h4">h4</Typography>
-          <Typography variant="h5">h5</Typography>
-          <Typography variant="h6">h6</Typography>
-
+          <div className="myflexcolumn">
+            <Typography variant="h1">h1 20px weight 600</Typography>
+            <Typography variant="h2">h2 20px weight 400</Typography>
+            <Typography variant="h3">h3 16px weight 600</Typography>
+            <Typography variant="h4">h4 16px weight 400</Typography>
+            <Typography variant="h5">h5 14px weight 600</Typography>
+            <Typography variant="h6">h6 14px weight 400</Typography>
+            <Typography variant="subtitle1">
+              subtitle1 12px weight 600
+            </Typography>
+            <Typography variant="subtitle2">
+              subtitle2 12px weight 400
+            </Typography>
+            <Typography variant="body1">body1 14px weight 400</Typography>
+            <Typography variant="body2">body2 12px weight 400</Typography>
+            <Typography variant="button">button 14px weight 400</Typography>
+            <Typography variant="caption">caption</Typography>
+            <Typography variant="overline">overline</Typography>
+          </div>
           <Divider textAlign="left" className="zc-padding-top-bottom">
             Edit Divider
           </Divider>
