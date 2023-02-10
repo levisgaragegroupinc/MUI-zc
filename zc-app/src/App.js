@@ -326,6 +326,21 @@ function App() {
           </div>
 
           <Divider textAlign="left" className="zc-padding-top-bottom">
+            <h3>Error Disabled</h3>
+          </Divider>
+          <div className="myflexbox">
+            <Button variant="text" color="error" disabled="true">
+              Error Text
+            </Button>
+            <Button variant="contained" color="error" disabled="true">
+              Error Contained
+            </Button>
+            <Button variant="outlined" color="error" disabled="true">
+              Error Outlined
+            </Button>
+          </div>
+
+          <Divider textAlign="left" className="zc-padding-top-bottom">
             <h3>Info</h3>
           </Divider>
           <div className="myflexbox">

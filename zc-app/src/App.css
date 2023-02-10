@@ -1,6 +1,7 @@
 :root {
 --background: #EFEFEF;
 --modalbackground: #FAFAFA;
+--whitebackground: #FFF;
 
 /* padding */
 --s-pad: 3px;
@@ -22,7 +23,7 @@
 .App {
   display: flex;
   text-align: center;
-  background-color: var(--modalbackground);
+  background-color: var(--whitebackground);
 }
 
 .Main {
