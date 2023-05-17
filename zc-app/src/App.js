@@ -218,7 +218,8 @@ const theme = createTheme({
       letterSpacing: "0.0em",
     },
     button: {
-      fontFamily: '"Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
+      fontFamily:
+        '"Helvetica", "Segoe UI","Tahoma","Geneva","Vardana","sans-serif"',
       fontWeight: 600,
       fontSize: "14px",
       lineHeight: "23px",
